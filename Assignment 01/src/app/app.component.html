@@ -1,0 +1,36 @@
+ <h1>
+  {{title}} 
+</h1>
+
+
+<!-- <a *ngFor="let item of starList; let i=index " (click)="setStar(i)">
+  <i class="fa" [ngClass]="{'fa-star-o':item,'fa-star':!item}"></i> 
+  <i *ngIf="item" class="fa fa-star-o"></i>
+  <i *ngIf="!item" class="fa fa-star"></i>
+</a>
+<br>
+Rating :- {{rating}} stars -->
+<br>
+<br>
+<table border=1>
+  <caption>Frameworks Rating</caption>
+  <tr>
+    <td>Id</td>
+    <td>Framework Name</td>
+    <td>Rating</td>
+  </tr>
+  <tr *ngFor="let record of recordList">
+    <td>{{record.Id}}</td>
+    <td>{{record.Framework}}</td>
+    <td>
+      <a *ngFor="let item of record.myList; let i=index " (click)="setStarTable(record,i)">
+        <i class="fa" [ngClass]="{'fa-star-o':item,'fa-star':!item}"></i>
+      </a>
+    </td>
+  </tr>
+</table> 
+
+
+<!-- <i class="fa-star" [ngClass]="{'far':item,'fas':!item}" ></i> -->
+
+<!-- https://github.com/angular/angular-cli/blob/master/docs/documentation/stories/include-font-awesome.md -->
